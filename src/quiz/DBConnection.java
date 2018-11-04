@@ -18,8 +18,8 @@ public class DBConnection {
 	 */
 	public Statement conect() {
 		String server = "jdbc:mysql://localhost:3306/QUIZ";
-		String user = "root";
-		String pass = "";
+		String user = "insira_seu_usuário";
+		String pass = "insira_sua_senha";
 		try {
 			//Class.forName(driver);
 			this.conn = DriverManager.getConnection(server, user, pass);
