@@ -1,16 +1,21 @@
+package quiz;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.Statement;
-import java.sql.SQLException;
+
+/** Classe para conexão com o banco de dados Mysql.
+ * @author anglesson
+ * @version 0.1
+ */
 
 public class DBConnection {
-	// Attributes
+	// Atributos
 	private Connection conn = null;
 	private Statement stm = null;
-	private ResultSet res = null;
 	
-	// function for connection
+	/** Método para conectar ao banco de dados. 
+	 * @return Statement - Conexão
+	 */
 	public Statement conect() {
 		String server = "jdbc:mysql://localhost:3306/QUIZ";
 		String user = "root";
@@ -26,7 +31,9 @@ public class DBConnection {
 		return stm;
 	}
 	
-	// Function for verify connection
+	/** Método para testar a conexão com o banco de dados.
+	 * @return Boolean
+	 */
 	public boolean isConnected() {
 		if(this.conn != null) {
 			return true;
