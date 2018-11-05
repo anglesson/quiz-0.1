@@ -186,7 +186,10 @@ public class Quiz {
 	 */
 	public static void jogar() throws SQLException {
 		// 0-Error 1-Info 2-Alert 3-Question
-		JOptionPane.showMessageDialog(null, "\nSerá solcitado que você preencha as informações na seguinte ordem: \n1-Pergunta \n2-Alternativas(A,B,C,D,E) \n3-Resposta", "REGRAS DO QUIZ", 1);
+		JOptionPane.showMessageDialog(null, " - Você responderá uma sequencia de 10 perguntas.\n" + 
+				" - Cada pargunta vale 1 ponto.\n" + 
+				" - Ao clicar em cancelar você sairá do jogo.\n" + 
+				" - No final será apresentado o seu desempenho: Ruim, Bom ou Muito bom.", "REGRAS DO QUIZ", 1);
 		
 		// Instância da classe questão
 		Questao qst = new Questao();
@@ -238,7 +241,12 @@ public class Quiz {
 		// Exibe Resultado
 		if(pontos <= 5) {
 			JOptionPane.showMessageDialog(null, "Você acertou "+pontos+" sua pontuação foi ruim. Estude mais um pouco!");
+		} else if(pontos <=8 ) {
+			JOptionPane.showMessageDialog(null, "Você acertou "+pontos+" sua pontuação foi bom. Mas, pode melhorar!");
+		} else {
+			JOptionPane.showMessageDialog(null, "Você acertou "+pontos+" sua pontuação foi muito bom. Parabéns!");
 		}
+		inicio();
 	}
 	
 }
